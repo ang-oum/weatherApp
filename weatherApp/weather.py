@@ -14,18 +14,17 @@ def get_data(city, API_key):
 def get_free_forecast_data(city, count, API_key):
     lat = get_lat_lon_time(city)[0]
     lon = get_lat_lon_time(city)[1]
-    time = get_lat_lon_time(city)[2]
     resp = requests.get(f'https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&cnt={count}&appid={API_key}').json()
     print(resp)
+    #Geeft enkel (max 5) dagen forecast per 3uur
     return resp
-
-
-
 
 
 def get_forecast_weather(city, count):
     response = get_free_forecast_data(city, count, api_key)
+    print(response['list'])
     return response
+
 
 def get_lat_lon_time(city):
     response = get_data(city, api_key)
@@ -45,9 +44,6 @@ def kelvin_to_celcius(kelvin):
     celsius = kelvin - 273.15
     return celsius
 
-
-
-
 def get_current_weather(city):
     response = get_data(city, api_key)
     temp_kelvin = response['main']['temp']
@@ -66,9 +62,6 @@ def get_current_weather(city):
     print(f"Sun rise in    {city}: {sunrise_time} local time")
     print(f"Sun sets in    {city}: {sunset_time} local time")
     print(f"The sky in     {city}: {description}")
-
-
-
 
 '''
 data vanaf 1979 beschikbaar
