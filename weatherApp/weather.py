@@ -15,7 +15,7 @@ def get_free_forecast_data(city, count, API_key):
     lat = get_lat_lon_time(city)[0]
     lon = get_lat_lon_time(city)[1]
     resp = requests.get(f'https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&cnt={count}&appid={API_key}').json()
-    print(resp)
+    #print(resp)
     #Geeft enkel (max 5) dagen forecast per 3uur
     return resp
 
