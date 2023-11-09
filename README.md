@@ -1,5 +1,5 @@
 # weatherApp
-run 'python weather.py' command
+run 'python weather.py' command locally in CLI
 
 fill in a city & number of days
 
