@@ -74,7 +74,7 @@ def get_current_weather(city):
     description = response['weather'][0]['description']
     sunrise_time = dt.datetime.utcfromtimestamp(response['sys']['sunrise'] + response['timezone'])
     sunset_time = dt.datetime.utcfromtimestamp(response['sys']['sunset'] + response['timezone'])
-    print('\n' "_______________________DATACONTROLE______________________" )
+    print('\n' "_______________________DATACONTROLE_______________________________" )
     print(f"Temperature in {city}: {temp_celcius:.2f}°C")
     print(f"Temperature in {city} feels like: {feels_like_celcius:.2f}°C")
     print(f"Humidity in    {city}: {humidity}%")
@@ -82,7 +82,7 @@ def get_current_weather(city):
     print(f"Sun rise in    {city}: {sunrise_time} local time")
     print(f"Sun sets in    {city}: {sunset_time} local time")
     print(f"The sky in     {city}: {description}")
-    print('\n' "_________________________________________________________" '\n')
+    print('\n' "____________wordt opgehaald door een andere API__________________" '\n')
 
 '''
 data vanaf 1979 beschikbaar
